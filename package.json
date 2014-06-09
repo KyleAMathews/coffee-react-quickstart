@@ -1,0 +1,33 @@
+{
+  "name": "coffee-react-quickstart",
+  "version": "0.0.0",
+  "description": "Evolving base for creating React applications",
+  "main": "server.coffee",
+  "scripts": {
+    "start": "NODE_ENV=production ./node_modules/.bin/coffee server.coffee",
+    "build": "watchify client.coffee -t [ coffee-reactify --coffeeout ] --extension='.coffee' -o ./public/bundle.js -v -d",
+    "build-prod": "NODE_ENV=production browserify -t [ coffee-reactify --coffeeout ] --extension='.coffee' client.coffee > public/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "coffee-reactify": "^0.1.2",
+    "coffee-script": "^1.7.1",
+    "coffeeify": "^0.6.0",
+    "envify": "^1.2.1",
+    "hapi": "^5.1.0",
+    "react": "^0.10.0",
+    "reactify": "^0.13.1",
+    "socket.io": "^1.0.4",
+    "underscore": "^1.6.0",
+    "watchify": "^0.10.2"
+  },
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "reactify",
+      "envify"
+    ]
+  }
+}
