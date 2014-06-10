@@ -1,0 +1,99 @@
+@import "modular-scale";
+@import "functions";
+@import "breakpoint";
+
+$base-font-size: 20px;
+$base-line-height: 26px;
+$rhythm-unit: "rem";
+
+// Setup vertical rhythm
+@include establish-baseline;
+
+// Font families
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$alt-font-family: Georgia, sans-serif;
+
+// Setup modular-scale
+$ms-base: 1em;
+$ms-ratio: $fifth;
+
+@mixin type-scale($scale, $map: $type-scale) {
+  $font-size: map-fetch($map, $scale font-size);
+  $base-lines: map-fetch($map, $scale base-lines);
+  @include adjust-font-size-to($font-size, $base-lines);
+}
+
+$type-scale: (
+  tiny: (
+    font-size: ms(-2),
+    base-lines: 0.5
+  ),
+  small: (
+    font-size: ms(-1.5),
+    base-lines: 0.75
+  ),
+  base: (
+    font-size: ms(-1),
+    base-lines: 1
+  ),
+  medium: (
+    font-size: ms(-0.5),
+    base-lines: 1
+  ),
+  large: (
+    font-size: ms(0),
+    base-lines: 1
+  ),
+  xlarge: (
+    font-size: ms(1),
+    base-lines: 1.35
+  ),
+  xxlarge: (
+    font-size: ms(2),
+    base-lines: 1.8
+  )
+);
+
+// Headings
+#{h1, h2, h3, h4, h5} {
+  color: gray(15%);
+  font-family: $base-font-family;
+  font-weight: 700;
+}
+
+h1 {
+  @include type-scale(xxlarge);
+  margin-top: rhythm(0.5);
+  @include breakpoint(500px) {
+    margin-top: rhythm(2);
+  }
+  margin-bottom: rhythm(1);
+}
+h2 {
+  @include type-scale(xlarge);
+  margin-top: rhythm(2);
+  margin-bottom: rhythm(0.25);
+}
+h3 {
+  @include type-scale(large);
+  margin-top: rhythm(1);
+  margin-bottom: rhythm(0.25);
+}
+h4 {
+  @include type-scale(medium);
+  margin-top: rhythm(1);
+  margin-bottom: rhythm(0);
+}
+h5 {
+  @include type-scale(base);
+  margin-top: rhythm(1);
+  margin-bottom: rhythm(0);
+}
+h6 {
+  @include type-scale(small);
+  margin-top: rhythm(1);
+  margin-bottom: rhythm(0);
+}
+small {
+  @include type-scale(medium);
+}
