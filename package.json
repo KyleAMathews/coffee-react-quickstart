@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=production ./node_modules/.bin/coffee server.coffee",
     "build": "cult build",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "license": "MIT",
@@ -29,5 +29,21 @@
     "socket.io": "^1.0.4",
     "underscore": "^1.6.0",
     "watchify": "^0.10.2"
+  },
+  "devDependencies": {
+    "coffee-react-transform": "^0.3.1",
+    "jest-cli": "^0.1.15"
+  },
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ],
+    "testFileExtensions": [
+      "coffee",
+      "js",
+      "cjsx"
+    ],
+    "moduleFileExtensions": ["js", "json", "coffee", "cjsx"]
   }
 }
