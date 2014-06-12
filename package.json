@@ -28,6 +28,7 @@
     "reactify": "^0.13.1",
     "socket.io": "^1.0.4",
     "underscore": "^1.6.0",
+    "vinyl-source-stream": "^0.1.1",
     "watchify": "^0.10.2"
   },
   "devDependencies": {
@@ -44,6 +45,11 @@
       "js",
       "cjsx"
     ],
-    "moduleFileExtensions": ["js", "json", "coffee", "cjsx"]
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "coffee",
+      "cjsx"
+    ]
   }
 }

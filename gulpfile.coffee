@@ -3,7 +3,6 @@ open = require 'open'
 connect = require 'gulp-connect'
 source = require('vinyl-source-stream')
 watchify = require('watchify')
-browserify = require 'browserify'
 
 # Load plugins
 $ = require('gulp-load-plugins')()
