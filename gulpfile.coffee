@@ -1,6 +1,9 @@
 gulp = require 'gulp'
 open = require 'open'
 connect = require 'gulp-connect'
+source = require('vinyl-source-stream')
+watchify = require('watchify')
+browserify = require 'browserify'
 
 # Load plugins
 $ = require('gulp-load-plugins')()
@@ -52,6 +55,19 @@ gulp.task 'default', ->
 
 gulp.task 'build', ['scripts', 'css']
 
-gulp.task 'watch', ['scripts', 'css', 'connect'], ->
+gulp.task 'watch', ['css', 'connect'], ->
   gulp.watch(['styles/*'], ['css'])
-  gulp.watch(['client.coffee', 'react_components/**/*'], ['scripts'])
+
+  # https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md
+  bundler = watchify('./client.coffee', {
+    extensions: ['.coffee', '.cjsx']
+  })
+  bundler.transform('coffee-reactify')
+  rebundle = ->
+    return bundler.bundle({debug: true})
+      .pipe(source('bundle.js'))
+      .pipe(gulp.dest('./public'))
+      .pipe($.connect.reload())
+
+  bundler.on('update', rebundle)
+  rebundle()
