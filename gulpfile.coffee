@@ -55,7 +55,7 @@ gulp.task 'default', ->
 gulp.task 'build', ['scripts', 'css']
 
 gulp.task 'watch', ['css', 'connect'], ->
-  gulp.watch(['styles/*'], ['css'])
+  gulp.watch(['styles/*', 'styles/**/*'], ['css'])
 
   # https://github.com/gulpjs/gulp/blob/master/docs/recipes/fast-browserify-builds-with-watchify.md
   bundler = watchify('./client.coffee', {
