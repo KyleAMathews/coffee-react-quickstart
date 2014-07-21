@@ -46,7 +46,9 @@ gulp.task('css', ->
 gulp.task 'connect', -> connect.server({
   root: ['public']
   port: 9000,
-  livereload: true
+  livereload: true,
+  # uncomment for single-page web apps or to handle 404s:
+  # fallback: 'public/index.html'
 })
 
 gulp.task 'default', ->
