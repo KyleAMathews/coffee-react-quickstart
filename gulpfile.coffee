@@ -28,6 +28,11 @@ gulp.task('css', ->
     .pipe(connect.reload())
 )
 
+gulp.task('copy-assets', ->
+    gulp.src('assets/**')
+      .pipe(gulp.dest('public'))
+      .pipe($.size())
+)
 
 gulp.task "webpack:build", (callback) ->
 
@@ -104,8 +109,9 @@ gulp.task 'connect', -> connect.server({
 gulp.task 'default', ->
   gulp.start 'build'
 
-gulp.task 'build', ['webpack:build', 'css']
+gulp.task 'build', ['webpack:build', 'css', 'copy-assets']
 
 gulp.task 'watch', ['css', 'connect', 'webpack:build-dev'], ->
   gulp.watch(['./styles/**'], ['css'])
   gulp.watch(['./react_components/**'], ['webpack:build-dev'])
+  gulp.watch(['./assets/**'], ['copy-assets'])
