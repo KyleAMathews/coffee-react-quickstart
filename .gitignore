@@ -26,3 +26,5 @@ node_modules
 public/bundle.js
 .sass-cache/
 public/bundle.js.map
+public/index.html
+public/main.css
