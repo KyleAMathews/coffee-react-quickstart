@@ -1,9 +1,12 @@
 coffee-react-quickstart
 =======================
 
-Evolving base for creating React applications
+Quickstart for creating React.js web applications.
 
-Has React/Testing/Sass starter code along with a gulpfile for building.
+Includes:
+
+* SASS project with basic styling for elements and typography
+* Gulpfile for building css from Sass and javascript using Webpack
 
 ## Install dependencies
 

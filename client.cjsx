@@ -1,3 +1,6 @@
+# Load css first thing. It gets injected in the <head> in a <style> element.
+require './public/main.css'
+
 React = require 'react'
 
 HelloWorld = require './lib/react_components/hello_world'

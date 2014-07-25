@@ -1,6 +1,5 @@
 gulp = require 'gulp'
 gutil = require 'gulp-util'
-connect = require 'gulp-connect'
 webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
 webpackConfig = require("./webpack.config.js")
@@ -28,10 +27,9 @@ gulp.task('css', ->
         'breakpoint']
     }))
     .on('error', (err) ->
-      console.log err
+      gutil.log err
     )
     .pipe($.size())
-    .pipe(connect.reload())
 )
 
 gulp.task('copy-assets', ->
@@ -76,7 +74,6 @@ gulp.task "webpack:build-dev", (callback) ->
   devCompiler.run (err, stats) ->
     throw new gutil.PluginError("webpack:build-dev", err)  if err
     gutil.log "[webpack:build-dev]", stats.toString(colors: true)
-    gulp.src('public/bundle.js').pipe(connect.reload())
     callback()
     return
 
@@ -84,40 +81,29 @@ gulp.task "webpack:build-dev", (callback) ->
 
 
 # Comment out until can get working w/ hot js reload + css reload.
-#gulp.task "webpack-dev-server", (callback) ->
-  ## Modify some webpack config options.
-  #config = Object.create(webpackConfig)
-  #config.devtool = "eval"
-  #config.debug = true
+gulp.task "webpack-dev-server", (callback) ->
+  config = Object.create(webpackConfig)
 
-  ## Start a webpack-dev-server.
-  #new WebpackDevServer(webpack(config),
-    #contentBase: './public'
-    #quiet: true
-    #stats:
-      #colors: true
-  #).listen 8080, "localhost", (err) ->
-    #throw new gutil.PluginError("webpack-dev-server", err) if err
-    #gutil.log "[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html"
-    #return
+  # Start a webpack-dev-server.
+  new WebpackDevServer(webpack(config),
+    #contentPath: './public/'
+    #publicPath: './public/'
+    publicPath: config.output.publicPath
+    hot: true
+    stats:
+      colors: true
+  ).listen 8080, "localhost", (err) ->
+    throw new gutil.PluginError("webpack-dev-server", err) if err
+    gutil.log "[webpack-dev-server]", "http://localhost:8080/webpack-dev-server/index.html"
+    callback()
 
-  #return
-
-# Connect
-gulp.task 'connect', -> connect.server({
-  root: ['public']
-  port: 9000,
-  livereload: true,
-  # uncomment for single-page web apps or to handle 404s:
-  # fallback: 'public/index.html'
-})
+  return
 
 gulp.task 'default', ->
   gulp.start 'build'
 
 gulp.task 'build', ['webpack:build', 'css', 'copy-assets']
 
-gulp.task 'watch', ['css', 'connect', 'webpack:build-dev'], ->
+gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
   gulp.watch(['styles/**'], ['css'])
-  gulp.watch(['client.cjsx', 'lib/**'], ['webpack:build-dev'])
   gulp.watch(['assets/**'], ['copy-assets'])
