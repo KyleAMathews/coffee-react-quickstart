@@ -1,6 +1,6 @@
 React = require 'react'
 
-HelloWorld = require './react_components/hello_world'
+HelloWorld = require './lib/react_components/hello_world'
 
 # Assign react to Window so the Chrome React Dev Tools will work
 window.React = React

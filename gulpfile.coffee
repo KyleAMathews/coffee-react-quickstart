@@ -19,7 +19,13 @@ gulp.task('css', ->
       comments: false
       bundle_exec: true
       time: true
-      require: ['susy', 'modular-scale', 'normalize-scss', 'sass-css-importer', 'breakpoint']
+      require: [
+        'susy',
+        'modular-scale',
+        'normalize-scss',
+        'sass-css-importer',
+        'sassy-buttons',
+        'breakpoint']
     }))
     .on('error', (err) ->
       console.log err
@@ -112,6 +118,6 @@ gulp.task 'default', ->
 gulp.task 'build', ['webpack:build', 'css', 'copy-assets']
 
 gulp.task 'watch', ['css', 'connect', 'webpack:build-dev'], ->
-  gulp.watch(['./styles/**'], ['css'])
-  gulp.watch(['./react_components/**'], ['webpack:build-dev'])
-  gulp.watch(['./assets/**'], ['copy-assets'])
+  gulp.watch(['styles/**'], ['css'])
+  gulp.watch(['client.cjsx', 'lib/**'], ['webpack:build-dev'])
+  gulp.watch(['assets/**'], ['copy-assets'])
