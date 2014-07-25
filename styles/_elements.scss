@@ -86,3 +86,7 @@ hr {
   height: 1px;
   width: 100%;
 }
+
+button, input[type="submit"], a.button {
+  @include button(gray(80%));
+}
