@@ -3,6 +3,7 @@ gutil = require 'gulp-util'
 webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
 webpackConfig = require("./webpack.config.js")
+_ = require 'underscore'
 
 # Load plugins
 $ = require('gulp-load-plugins')()
@@ -41,7 +42,7 @@ gulp.task('copy-assets', ->
 gulp.task "webpack:build", (callback) ->
 
   # Modify some webpack config options.
-  config = Object.create(webpackConfig)
+  config = _.extend {}, webpackConfig
   config.plugins = config.plugins.concat(
     new webpack.DefinePlugin(
       # This has effect on the react lib size.
@@ -51,6 +52,10 @@ gulp.task "webpack:build", (callback) ->
     new webpack.optimize.UglifyJsPlugin()
   )
 
+  # Don't use react-hot-loader for the production build.
+  config.module.loaders[1] =
+    { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']}
+
   # Run webpack.
   webpack config, (err, stats) ->
     throw new gutil.PluginError("webpack:build", err)  if err
@@ -58,11 +63,8 @@ gulp.task "webpack:build", (callback) ->
     callback()
     return
 
-  return
-
-
 # Modify some webpack config options.
-devConfig = Object.create(webpackConfig)
+devConfig = _.extend {}, webpackConfig
 devConfig.devtool = "sourcemap"
 devConfig.debug = true
 
@@ -80,7 +82,7 @@ gulp.task "webpack:build-dev", (callback) ->
   return
 
 gulp.task "webpack-dev-server", (callback) ->
-  config = Object.create(webpackConfig)
+  config = _.extend {}, webpackConfig
 
   # Start a webpack-dev-server.
   new WebpackDevServer(webpack(config),
