@@ -9,7 +9,7 @@ It has a number of nice goodies baked in including:
 * Write your JSX in Coffeescript thanks to [coffee-react-transform](https://github.com/jsdf/coffee-react-transform).
 * Amazing URL-driven-development (UDD) with the [react-router project](https://github.com/rackt/react-router).
 * Uses [Gulp](http://gulpjs.com/) for building CSS and Javascript. Run `cult watch` for rebuilding css/js on the fly while developing and `cult build` to create minified versions for deploying to production.
-* Starter Sass project with sensible defaults.
+* Starter Sass project with [sensible defaults](http://kyleamathews.github.io/coffee-react-quickstart/#/styleguide).
 * Uses the best-of-breed grid system [Susy](http://susy.oddbird.net/).
 
 ## Install dependencies
