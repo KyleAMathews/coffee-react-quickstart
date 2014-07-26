@@ -12,7 +12,7 @@ module.exports = React.createClass
     <div>
       <h1>CSS Basic Elements</h1>
 
-      <p>The purpose of a styleguide like this is to help determine what the default css settings are and to ensure all normal HTML Elements are styled while designing a site.</p>
+      <p>The purpose of a styleguide like this is to help determine what the default CSS settings are and to ensure all normal HTML Elements are styled while designing a site.</p>
 
       <hr />
 
