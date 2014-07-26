@@ -1,4 +1,4 @@
-coffee-react-quickstart
+Coffee React Quickstart
 =======================
 
 Quickstart for creating React.js web applications.
