@@ -22,6 +22,7 @@
     "highlight.js": "^8.1.0",
     "jest-cli": "^0.1.17",
     "react": "^0.11.0",
+    "react-hot-loader": "^0.2.0",
     "react-router": "^0.4.1",
     "reactify": "^0.14.0",
     "style-loader": "^0.6.4",
