@@ -2,6 +2,7 @@ BIN = ./node_modules/.bin
 
 publish-gh-pages:
 	git checkout gh-pages
+	git merge master gh-pages
 	cult build
 	git add --all .
 	git commit -m "New release"
