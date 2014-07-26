@@ -5,6 +5,7 @@ module.exports = React.createClass
   displayName: 'HelloWorld'
 
   componentDidMount: ->
+    window.scroll(0,0)
     HighlightJS.highlightBlock(@refs.code.getDOMNode(), 'scss')
 
   render: ->
