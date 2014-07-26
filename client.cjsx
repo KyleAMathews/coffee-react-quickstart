@@ -2,14 +2,15 @@
 require './public/main.css'
 
 React = require 'react'
+# Assign react to Window so the Chrome React Dev Tools will work as well
+# so don't have to import react in every React component.
+window.React = React
+
 Route = require('react-router').Route
 
 HelloWorld = require './lib/react_components/hello_world'
 StyleGuide = require './lib/react_components/styleguide'
 App = require './lib/react_components/app'
-
-# Assign react to Window so the Chrome React Dev Tools will work
-window.React = React
 
 React.renderComponent((
   <Route handler={App}>
