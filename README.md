@@ -3,7 +3,7 @@ Coffee React Quickstart
 
 Quickstart for creating React.js web applications.
 
-It has a number of nice goodies included:
+It has a number of nice goodies included like:
 
 * Live reloading for both CSS and Javascript! This really speeds up your development. Live reloading is powered by the [Webpack module bundler](http://webpack.github.io/) and the [react-hot-loader](https://github.com/gaearon/react-hot-loader) projects.
 * Full JSX with Coffeescript support provided by [coffee-react-transform](https://github.com/jsdf/coffee-react-transform).
