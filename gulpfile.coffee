@@ -56,6 +56,7 @@ gulp.task "webpack:build", (callback) ->
   config.entry = "./client"
   config.module.loaders[1] =
     { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']}
+  config.plugins = []
 
   # Run webpack.
   webpack config, (err, stats) ->
