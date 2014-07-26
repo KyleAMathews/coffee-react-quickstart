@@ -2,6 +2,10 @@ Link = require('react-router').Link
 
 module.exports = React.createClass
   displayName: 'HelloWorld'
+
+  componentDidMount: ->
+    window.scroll(0,0)
+
   render: ->
     <div>
       <h1>Hello world!</h1>
