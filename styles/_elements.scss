@@ -27,7 +27,7 @@ img {
 code {
   @include border-radius(3px);
   @include force-wrap();
-  background: gray(90%);
+  background: gray(95%);
   border: 1px solid gray(80%);
   display: inline;
   font-family: Inconsolata, monospace, serif;
@@ -39,11 +39,11 @@ code {
 }
 
 pre {
+  background: gray(95%);
   margin: 0;
   margin-bottom: rhythm(1);
   padding: 0;
   code {
-    background: gray(95%);
     border: none;
     display: inline-block;
     overflow: initial;
