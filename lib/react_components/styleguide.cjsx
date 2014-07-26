@@ -103,6 +103,7 @@ module.exports = React.createClass
         </tbody>
       </table>
 
+      <br />
       <hr />
 
       <h1 id="misc">Misc Stuff - abbr, pre, code, sub, sup, etc.</h1>
