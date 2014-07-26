@@ -43,6 +43,13 @@ gulp.task "webpack:build", (callback) ->
 
   # Modify some webpack config options.
   config = _.extend {}, webpackConfig
+
+  # Don't use react-hot-loader for the production build.
+  config.entry = "./client"
+  config.module.loaders[1] =
+    { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']}
+  config.plugins = []
+
   config.plugins = config.plugins.concat(
     new webpack.DefinePlugin(
       # This has effect on the react lib size.
@@ -51,12 +58,6 @@ gulp.task "webpack:build", (callback) ->
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin()
   )
-
-  # Don't use react-hot-loader for the production build.
-  config.entry = "./client"
-  config.module.loaders[1] =
-    { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']}
-  config.plugins = []
 
   # Run webpack.
   webpack config, (err, stats) ->
