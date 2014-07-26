@@ -14,12 +14,17 @@ Clone this repo and then after entering the new directory run `npm install` and 
 
 You'll also need to have cult/gulp installed globally to run the coffeescript gulpfile: `npm install -g gulp cult`
 
-## Building
+## Development
 Run in the root of your directory: `cult watch`
 
-This will watch the src directories and build on changes and placed the built css and js files in the public directory. It'll serve everything in the /public directory at localhost:9000
+This will watch the src directories and build on changes and placed the built css and js files in the public directory. It'll serve everything in the /public directory at localhost:8080
 
-Default output looks like:
+Then try editing `lib/react_components/hello_world.cjsx` and see your changes magically show up in your browser with *no* page reload!
 
-![screen shot 2014-06-10 at 5 49 07 pm](https://cloud.githubusercontent.com/assets/71047/3238592/2bf3496c-f0fa-11e3-835c-b60ab503759d.png)
+# Building
+To build for production, simply run `cult build`
+
+# Demo
+Try out the example app included with this quickstart: http://kyleamathews.github.io/coffee-react-quickstart/
+
 
