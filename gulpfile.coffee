@@ -79,8 +79,6 @@ gulp.task "webpack:build-dev", (callback) ->
 
   return
 
-
-# Comment out until can get working w/ hot js reload + css reload.
 gulp.task "webpack-dev-server", (callback) ->
   config = Object.create(webpackConfig)
 

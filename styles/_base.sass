@@ -4,11 +4,20 @@
   -webkit-box-sizing: border-box
   box-sizing: border-box
 
+html
+  overflow-y: scroll
+
 body
   +container(32em)
   padding: 1.5rem
   font-family: $alt-font-family
   font-weight: 400
-  color: gray(30%)
+  color: gray(40%)
   text-rendering: optimizeLegibility
   word-wrap: break
+
+header
+  a.active
+    color: gray(60%)
+    text-decoration: none
+    cursor: default

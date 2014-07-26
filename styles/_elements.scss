@@ -16,6 +16,7 @@ a {
 }
 
 img {
+  margin-bottom: rhythm(1);
   max-width: 100%;
   &.float-left {
     float: left;
@@ -42,12 +43,13 @@ pre {
   margin-bottom: rhythm(1);
   padding: 0;
   code {
-    background: none;
+    background: gray(95%);
     border: none;
     display: inline-block;
     overflow: initial;
     padding: rhythm(1);
     white-space: inherit;
+    width: 100%;
     word-wrap: inherit;
   }
 }
