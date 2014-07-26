@@ -53,6 +53,7 @@ gulp.task "webpack:build", (callback) ->
   )
 
   # Don't use react-hot-loader for the production build.
+  config.entry = "./client"
   config.module.loaders[1] =
     { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']}
 
