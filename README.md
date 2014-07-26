@@ -3,10 +3,14 @@ Coffee React Quickstart
 
 Quickstart for creating React.js web applications.
 
-Includes:
+It has a number of nice goodies included:
 
-* SASS project with basic styling for elements and typography
-* Gulpfile for building css from Sass and javascript using Webpack
+* Live reloading for both CSS and Javascript! This really speeds up your development. Live reloading is powered by the [Webpack module bundler](http://webpack.github.io/) and the [react-hot-loader](https://github.com/gaearon/react-hot-loader) projects.
+* Full JSX with Coffeescript support provided by [coffee-react-transform](https://github.com/jsdf/coffee-react-transform).
+* Amazing URL-driven-development (UDD) with the [react-router project](https://github.com/rackt/react-router).
+* Uses [Gulp](http://gulpjs.com/) for building CSS and Javascript. Run `cult watch` for rebuilding css/js on the fly while developing and `cult build` to create minified versions for deploying to production.
+* Starter Sass project with sensible defaults.
+* Uses the best-of-breed grid system [Susy](http://susy.oddbird.net/).
 
 ## Install dependencies
 
