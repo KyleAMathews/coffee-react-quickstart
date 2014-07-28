@@ -3,7 +3,6 @@ require '../../public/main.css'
 
 React = require 'react'
 # Assign react to Window so the Chrome React Dev Tools will work.
-# Also, this way don't have to import react within every React component.
 window.React = React
 
 Routes = require('react-router').Routes
