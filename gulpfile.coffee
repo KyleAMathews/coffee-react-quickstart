@@ -10,11 +10,11 @@ $ = require('gulp-load-plugins')()
 
 # CSS
 gulp.task('css', ->
-  gulp.src(['styles/*.sass', 'styles/*.scss'])
+  gulp.src(['src/styles/*.sass', 'src/styles/*.scss'])
     .pipe($.compass({
       css: 'public/'
-      sass: 'styles'
-      image: 'styles/images'
+      sass: 'src/styles'
+      image: 'src/styles/images'
       style: 'nested'
       comments: false
       bundle_exec: true
@@ -108,5 +108,5 @@ gulp.task 'default', ->
 gulp.task 'build', ['webpack:build', 'css', 'copy-assets']
 
 gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
-  gulp.watch(['styles/**'], ['css'])
+  gulp.watch(['src/styles/**'], ['css'])
   gulp.watch(['assets/**'], ['copy-assets'])
