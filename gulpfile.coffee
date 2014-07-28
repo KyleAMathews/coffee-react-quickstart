@@ -89,9 +89,7 @@ gulp.task "webpack-dev-server", (callback) ->
 
   # Start a webpack-dev-server.
   new WebpackDevServer(webpack(config),
-    #contentPath: './public/'
-    #publicPath: './public/'
-    publicPath: config.output.publicPath
+    contentBase: './public/'
     hot: true
     stats:
       colors: true
