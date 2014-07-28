@@ -1,5 +1,3 @@
-BIN = ./node_modules/.bin
-
 publish-gh-pages:
 	git checkout gh-pages
 	git merge master gh-pages
