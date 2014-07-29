@@ -1,6 +1,7 @@
 Link = require('react-router').Link
+RB = require('react.backbone')
 
-module.exports = React.createClass
+module.exports = React.createBackboneClass
   displayName: 'HelloWorld'
 
   componentDidMount: ->

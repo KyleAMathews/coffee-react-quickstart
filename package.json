@@ -5,6 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": "https://github.com/KyleAMathews/coffee-react-quickstart/issues",
   "dependencies": {
+    "backbone": "^1.1.2",
     "cjsx-loader": "git://github.com/KyleAMathews/cjsx-loader",
     "coffee-loader": "^0.7.2",
     "coffee-react-transform": "^0.4.0",
@@ -20,6 +21,7 @@
     "jest-cli": "^0.1.17",
     "jquery": "^1.10.0",
     "react": "^0.11.1",
+    "react.backbone": "^0.4.1",
     "react-hot-loader": "^0.2.0",
     "react-router": "^0.5.0",
     "style-loader": "^0.6.4",
