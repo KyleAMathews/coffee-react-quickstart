@@ -4,8 +4,6 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    "webpack-dev-server/client?http://0.0.0.0:8080",
-    'webpack/hot/dev-server',
     './src/scripts/router'
   ],
 	output: {
@@ -24,7 +22,7 @@ module.exports = {
 	module: {
 		loaders: [
       { test: /\.css$/, loaders: ['style', 'css']},
-      { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
+      { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']},
       { test: /\.coffee$/, loader: 'coffee' }
     ]
   }
