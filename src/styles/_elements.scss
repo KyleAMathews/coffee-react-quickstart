@@ -8,7 +8,7 @@ p {
 }
 a {
   text-decoration: none;
-  color: #4472B9;
+  color: #4183c4;
   &:hover, &:focus {
     text-decoration: underline;
     color: inherit;
@@ -16,6 +16,7 @@ a {
 }
 
 img {
+  margin-bottom: rhythm(1);
   max-width: 100%;
   &.float-left {
     float: left;
@@ -26,7 +27,7 @@ img {
 code {
   @include border-radius(3px);
   @include force-wrap();
-  background: gray(90%);
+  background: gray(95%);
   border: 1px solid gray(80%);
   display: inline;
   font-family: Inconsolata, monospace, serif;
@@ -38,16 +39,17 @@ code {
 }
 
 pre {
+  font-family: $alt-font-family;
   margin: 0;
   margin-bottom: rhythm(1);
   padding: 0;
   code {
-    background: none;
     border: none;
     display: inline-block;
     overflow: initial;
     padding: rhythm(1);
     white-space: inherit;
+    width: 100%;
     word-wrap: inherit;
   }
 }
@@ -85,4 +87,8 @@ hr {
   float: none;
   height: 1px;
   width: 100%;
+}
+
+button, input[type="submit"], a.button {
+  @include button(gray(80%));
 }

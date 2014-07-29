@@ -1,0 +1,29 @@
+table {
+  @include table-scaffolding;
+  width: 100%;
+  th, td {
+    padding: rhythm(1/4);
+    @include apply-side-rhythm-border("bottom", 1px, 1/4);
+    border-color: gray(90%);
+  }
+  thead {
+    color: gray(15%);
+    font-family: $base-font-family;
+    th {
+      @include adjust-font-size-to(16px);
+      @include apply-side-rhythm-border("bottom", 3.25px, 1/4);
+      border-color: gray(75%);
+      text-align: left;
+    }
+  }
+  tbody, tfoot {
+    tr:last-child {
+      th, td {
+        border-bottom-width: 0px;
+      }
+    }
+  }
+  tbody {
+    @include adjust-font-size-to(16px);
+  }
+}
