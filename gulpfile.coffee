@@ -96,7 +96,7 @@ gulp.task "webpack-dev-server", (callback) ->
   config = _.extend {}, webpackConfig
 
   # Ensure there's a `./public/main.css` file that can be required.
-  touch.sync('./public/main.css')
+  touch.sync('./public/main.css', time: new Date(0))
 
   # Start a webpack-dev-server.
   devServer = new WebpackDevServer(webpack(config),
