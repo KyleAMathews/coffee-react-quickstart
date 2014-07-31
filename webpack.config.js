@@ -13,7 +13,7 @@ module.exports = {
 		filename: 'bundle.js',
 	},
 	resolveLoader: {
-		modulesDirectories: ['..', 'node_modules']
+		modulesDirectories: ['node_modules']
 	},
   plugins: [
     new webpack.HotModuleReplacementPlugin()

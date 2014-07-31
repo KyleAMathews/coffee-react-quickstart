@@ -5,7 +5,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "bugs": "https://github.com/KyleAMathews/coffee-react-quickstart/issues",
   "dependencies": {
-    "cjsx-loader": "git://github.com/KyleAMathews/cjsx-loader",
+    "cjsx-loader": "0.0.2",
     "coffee-loader": "^0.7.2",
     "coffee-react-transform": "^0.4.0",
     "coffee-script": "^1.7.1",
