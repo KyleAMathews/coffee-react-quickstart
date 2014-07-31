@@ -4,6 +4,7 @@ webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
 webpackConfig = require("./webpack.config.js")
 map = require 'map-stream'
+touch = require 'touch'
 _ = require 'underscore'
 
 # Load plugins
@@ -93,6 +94,9 @@ gulp.task "webpack:build-dev", (callback) ->
 devServer = {}
 gulp.task "webpack-dev-server", (callback) ->
   config = _.extend {}, webpackConfig
+
+  # Ensure there's a `./public/main.css` file that can be required.
+  touch.sync('./public/main.css')
 
   # Start a webpack-dev-server.
   devServer = new WebpackDevServer(webpack(config),
