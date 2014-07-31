@@ -3,6 +3,7 @@ gutil = require 'gulp-util'
 webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
 webpackConfig = require("./webpack.config.js")
+map = require 'map-stream'
 _ = require 'underscore'
 
 # Load plugins
@@ -31,6 +32,11 @@ gulp.task('css', ->
       gutil.log err
     )
     .pipe($.size())
+    .pipe(gulp.dest('public/'))
+    .pipe(map((a, cb) ->
+      if devServer.invalidate? then devServer.invalidate()
+      cb()
+    ))
 )
 
 gulp.task('copy-assets', ->
@@ -84,16 +90,18 @@ gulp.task "webpack:build-dev", (callback) ->
 
   return
 
+devServer = {}
 gulp.task "webpack-dev-server", (callback) ->
   config = _.extend {}, webpackConfig
 
   # Start a webpack-dev-server.
-  new WebpackDevServer(webpack(config),
+  devServer = new WebpackDevServer(webpack(config),
     contentBase: './public/'
     hot: true
-    stats:
-      colors: true
-  ).listen 8080, "0.0.0.0", (err) ->
+    watchDelay: 100
+    noInfo: true
+  )
+  devServer.listen 8080, "0.0.0.0", (err) ->
     throw new gutil.PluginError("webpack-dev-server", err) if err
     gutil.log "[webpack-dev-server]", "http://localhost:8080"
     callback()
