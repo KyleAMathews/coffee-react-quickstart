@@ -1,12 +1,13 @@
 Link = require('react-router').Link
-HighlightJS = require 'highlight.js'
+highlightJS = require 'highlight.js'
 
+# Simple HTML element styleguide to demonstrate default css stylings.
 module.exports = React.createClass
   displayName: 'HelloWorld'
 
   componentDidMount: ->
     window.scroll(0,0)
-    HighlightJS.highlightBlock(@refs.code.getDOMNode(), 'scss')
+    highlightJS.highlightBlock(@refs.code.getDOMNode(), 'scss')
 
   render: ->
     <div>
@@ -113,18 +114,18 @@ module.exports = React.createClass
 
       <h3>Bivouac on a mountain side.</h3>
       <pre>
-I see before me now a traveling army halting, 
-Below a fertile valley spread, with barns and the orchards of 
-       summer, 
-Behind, the terraced sides of a mountain, abrupt, in places rising 
-       high, 
-Broken, with rocks, with clinging cedars, with tall shapes dingily 
-       seen, 
-The numerous camp-fires scatter'd near and far, some away up on 
-       the mountain, 
-The shadowy forms of men and horses, looming, large-sized, 
-       flickering, 
-And over all the sky—the sky! far, far out of reach, studded, 
+I see before me now a traveling army halting,
+Below a fertile valley spread, with barns and the orchards of
+       summer,
+Behind, the terraced sides of a mountain, abrupt, in places rising
+       high,
+Broken, with rocks, with clinging cedars, with tall shapes dingily
+       seen,
+The numerous camp-fires scatter'd near and far, some away up on
+       the mountain,
+The shadowy forms of men and horses, looming, large-sized,
+       flickering,
+And over all the sky—the sky! far, far out of reach, studded,
        breaking out, the eternal stars.
       </pre>
 
