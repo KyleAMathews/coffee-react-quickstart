@@ -28,3 +28,5 @@ public/bundle.js
 public/bundle.js.map
 public/index.html
 public/main.css
+.fontcustom-manifest.json
+public/fonts/
