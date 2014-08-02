@@ -86,7 +86,8 @@ gulp.task "webpack:build", (callback) ->
       "process.env": NODE_ENV: JSON.stringify("production")
   ),
     new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.IgnorePlugin(/un~$/),
   )
 
   # Run webpack.
