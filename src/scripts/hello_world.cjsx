@@ -16,6 +16,7 @@ module.exports = React.createClass
         <li>Write your JSX in Coffeescript thanks to <a href="https://github.com/jsdf/coffee-react-transform">coffee-react-transform</a>.</li>
         <li>Amazing URL-driven-development (UDD) with the <a href="https://github.com/rackt/react-router">react-router project.</a></li>
         <li>Uses <a href="http://gulpjs.com">Gulp</a> for building CSS and Javascript. Run <code>cult watch</code> for rebuilding css/js on the fly while developing and <code>cult build</code> to create minified versions for deploying to production.</li>
+        <li>Easily create a custom font icon! Drop svg files in <code>src/styles/icons</code> and use them like <code>{"<span className='icon-home' />"}</code> (which becomes <span className="icon-home" />) and <code>{"<span className='icon-search' />"}</code> (which becomes <span className="icon-search" />)</li>
         <li>Includes <Link to="styleguide">sensible element stylings</Link> and several useful Sass plugins:</li>
         <ul>
           <li><a href="http://susy.oddbird.net/">Susy</a>: best-of-breed grid system.</li>

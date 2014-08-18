@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2014-7-31: Created.
+-->
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Thu Jul 31 12:57:32 2014
+ By Kyle Mathews
+Created by Kyle Mathews with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="fontcustom" horiz-adv-x="461" >
+  <font-face 
+    font-family="fontcustom"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 -64 475 411"
+    underline-thickness="25.6"
+    underline-position="-51.2"
+    unicode-range="U+F101-F102"
+  />
+    <missing-glyph />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" 
+d="M0 191c0 -3 0 -5 2 -7l18 -21c2 -2 4 -3 6 -3s5 0 7 2l197 165l198 -165c2 -1 4 -2 6 -2h1c2 0 4 1 6 3l18 21c2 2 2 4 2 7s-2 4 -4 6l-62 52v117c0 3 -1 4 -3 6s-3 3 -6 3h-55c-3 0 -5 -1 -7 -3s-2 -3 -2 -6v-56l-70 58c-6 5 -14 8 -22 8s-15 -3 -21 -8l-206 -171
+c-2 -2 -3 -3 -3 -6zM66 27c0 -5 1 -8 5 -12s8 -6 13 -6h110v110h73v-110h110c5 0 8 2 12 6s6 7 6 12v138v1l-165 136l-164 -136v-1v0v-138z" />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" horiz-adv-x="475" 
+d="M0 210c0 -27 5 -53 16 -78s25 -46 43 -64s39 -32 64 -43s51 -16 78 -16c42 0 80 12 114 36l98 -98c7 -7 16 -11 26 -11s19 4 26 11s10 16 10 26s-3 18 -10 25l-98 98c24 34 35 72 35 114c0 27 -5 53 -16 78s-24 47 -42 65s-40 32 -65 43s-51 15 -78 15s-53 -4 -78 -15
+s-46 -25 -64 -43s-32 -40 -43 -65s-16 -51 -16 -78zM73 210c0 35 13 66 38 91s55 37 90 37s66 -12 91 -37s37 -56 37 -91s-12 -65 -37 -90s-56 -38 -91 -38s-65 13 -90 38s-38 55 -38 90z" />
+  </font>
+</defs></svg>

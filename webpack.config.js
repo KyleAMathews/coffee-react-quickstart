@@ -11,13 +11,13 @@ module.exports = {
 	output: {
     path: path.join(__dirname, 'public'),
 		filename: 'bundle.js',
-    publicPath: '/public/'
 	},
 	resolveLoader: {
-		modulesDirectories: ['..', 'node_modules']
+		modulesDirectories: ['node_modules']
 	},
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.IgnorePlugin(/un~$/)
   ],
 	resolve: {
 		extensions: ['', '.js', '.cjsx', '.coffee']
