@@ -8,22 +8,23 @@ module.exports = {
     'webpack/hot/dev-server',
     './src/scripts/router'
   ],
-	output: {
+  devtool: "eval",
+  output: {
     path: path.join(__dirname, 'public'),
-		filename: 'bundle.js',
-	},
-	resolveLoader: {
-		modulesDirectories: ['node_modules']
-	},
+    filename: 'bundle.js',
+  },
+  resolveLoader: {
+    modulesDirectories: ['node_modules']
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin(/un~$/)
   ],
-	resolve: {
-		extensions: ['', '.js', '.cjsx', '.coffee']
-	},
-	module: {
-		loaders: [
+  resolve: {
+    extensions: ['', '.js', '.cjsx', '.coffee']
+  },
+  module: {
+    loaders: [
       { test: /\.css$/, loaders: ['style', 'css']},
       { test: /\.cjsx$/, loaders: ['react-hot', 'coffee', 'cjsx']},
       { test: /\.coffee$/, loader: 'coffee' }
