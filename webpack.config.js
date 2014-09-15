@@ -8,7 +8,7 @@ module.exports = {
     'webpack/hot/dev-server',
     './src/scripts/router'
   ],
-  devtool: "eval",
+  devtool: "source-map",
   output: {
     path: path.join(__dirname, 'public'),
     filename: 'bundle.js',
