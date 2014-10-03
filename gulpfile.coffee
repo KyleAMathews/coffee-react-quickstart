@@ -3,6 +3,7 @@ gutil = require 'gulp-util'
 webpack = require("webpack")
 WebpackDevServer = require("webpack-dev-server")
 webpackConfig = require("./webpack.config.js")
+webpackProductionConfig = require("./webpack.production.config.js")
 map = require 'map-stream'
 touch = require 'touch'
 _ = require 'underscore'
@@ -70,40 +71,16 @@ gulp.task('font-base-64', ->
 )
 
 gulp.task "webpack:build", (callback) ->
-
-  # Modify some webpack config options.
-  config = _.extend {}, webpackConfig
-
-  # Don't use react-hot-loader for the production build.
-  config.entry = "./src/scripts/router"
-  config.module.loaders[1] =
-    { test: /\.cjsx$/, loaders: ['coffee', 'cjsx']}
-  config.plugins = []
-
-  config.plugins = config.plugins.concat(
-    new webpack.DefinePlugin(
-      # This has effect on the react lib size.
-      "process.env": NODE_ENV: JSON.stringify("production")
-  ),
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
-    new webpack.IgnorePlugin(/un~$/),
-  )
-
   # Run webpack.
-  webpack config, (err, stats) ->
+  webpack webpackProductionConfig, (err, stats) ->
     throw new gutil.PluginError("webpack:build", err)  if err
     gutil.log "[webpack:build]", stats.toString(colors: true)
     callback()
     return
 
-# Modify some webpack config options.
-devConfig = _.extend {}, webpackConfig
-devConfig.devtool = "sourcemap"
-devConfig.debug = true
 
 # Create a single instance of the compiler to allow caching.
-devCompiler = webpack(devConfig)
+devCompiler = webpack(webpackConfig)
 gulp.task "webpack:build-dev", (callback) ->
 
   # Run webpack.
@@ -117,13 +94,11 @@ gulp.task "webpack:build-dev", (callback) ->
 
 devServer = {}
 gulp.task "webpack-dev-server", (callback) ->
-  config = _.extend {}, webpackConfig
-
   # Ensure there's a `./public/main.css` file that can be required.
   touch.sync('./public/main.css', time: new Date(0))
 
   # Start a webpack-dev-server.
-  devServer = new WebpackDevServer(webpack(config),
+  devServer = new WebpackDevServer(webpack(webpackConfig),
     contentBase: './public/'
     hot: true
     watchDelay: 100
