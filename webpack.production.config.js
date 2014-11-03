@@ -27,7 +27,6 @@ module.exports = {
     }),
     new webpack.IgnorePlugin(/vertx/),
     new webpack.IgnorePlugin(/un~$/),
-    new webpack.IgnorePlugin(/^\.\/lang$/, /moment$/),
     new CommonsChunkPlugin("commons.js"),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
