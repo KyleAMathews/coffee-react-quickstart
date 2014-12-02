@@ -1,19 +1,16 @@
 var path = require('path');
 var webpack = require('webpack');
-var CommonsChunkPlugin = require("./node_modules/webpack/lib/optimize/CommonsChunkPlugin");
 
 module.exports = {
   entry: {
     app: [
       './src/scripts/router'
     ],
-    landingPage: './src/scripts/LandingPageEntry'
   },
   devtool: 'source-map',
   output: {
       path: path.join(__dirname, "public"),
-      filename: "[name].bundle.js",
-      chunkFilename: "[id].chunk.js"
+      filename: "bundle.js",
   },
   resolveLoader: {
     modulesDirectories: ['..', 'node_modules']
@@ -27,7 +24,6 @@ module.exports = {
     }),
     new webpack.IgnorePlugin(/vertx/),
     new webpack.IgnorePlugin(/un~$/),
-    new CommonsChunkPlugin("commons.js"),
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin(),
   ],
