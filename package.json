@@ -31,9 +31,6 @@
     "webpack": "^1.4.13",
     "webpack-dev-server": "^1.6.6"
   },
-  "devDependencies": {
-    "cult": "^2.0.0"
-  },
   "homepage": "https://github.com/KyleAMathews/coffee-react-quickstart",
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
@@ -63,8 +60,8 @@
   "main": "server.coffee",
   "repository": "git@github.com:KyleAMathews/coffee-react-quickstart.git",
   "scripts": {
-    "start": "./node_modules/.bin/cult watch",
-    "build": "./node_modules/.bin/cult build",
+    "start": "./node_modules/.bin/gulp watch",
+    "build": "./node_modules/.bin/gulp build",
     "test": "jest"
   }
 }
