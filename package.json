@@ -23,15 +23,13 @@
     "map-stream": "0.0.5",
     "react": "^0.12.1",
     "react-hot-loader": "^0.5.0",
+    "react-retina-image": "^1.1.0",
     "react-router": "^0.11.4",
     "style-loader": "^0.8.2",
     "touch": "0.0.3",
     "underscore": "^1.7.0",
     "webpack": "^1.4.13",
     "webpack-dev-server": "^1.6.6"
-  },
-  "devDependencies": {
-    "cult": "^2.0.0"
   },
   "homepage": "https://github.com/KyleAMathews/coffee-react-quickstart",
   "jest": {
@@ -62,8 +60,8 @@
   "main": "server.coffee",
   "repository": "git@github.com:KyleAMathews/coffee-react-quickstart.git",
   "scripts": {
-    "start": "./node_modules/.bin/cult watch",
-    "build": "./node_modules/.bin/cult build",
+    "start": "./node_modules/.bin/gulp watch",
+    "build": "./node_modules/.bin/gulp build",
     "test": "jest"
   }
 }
