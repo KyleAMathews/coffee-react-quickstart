@@ -1,0 +1,13 @@
+label {
+  display: inline-block;
+  margin-bottom: rhythm(1/8);
+}
+
+input,
+textarea {
+  @include rhythm-borders(1px, 1/2);
+  border-color: gray(80%);
+  margin-bottom: rhythm(1);
+  resize: none;
+  width: 100%;
+}
