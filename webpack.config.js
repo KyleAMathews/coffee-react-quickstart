@@ -7,7 +7,7 @@ module.exports = {
     'webpack/hot/only-dev-server',
     './src/scripts/router'
   ],
-  devtool: "source-map",
+  devtool: "eval",
   debug: true,
   output: {
     path: path.join(__dirname, "public"),
