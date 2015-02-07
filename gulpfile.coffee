@@ -70,7 +70,7 @@ gulp.task('font-base-64', ->
     .pipe(gulp.dest('src/styles/'))
 )
 
-gulp.task "webpack:build", (callback) ->
+gulp.task "webpack:build", ['css'], (callback) ->
   # Run webpack.
   webpack webpackProductionConfig, (err, stats) ->
     throw new gutil.PluginError("webpack:build", err)  if err
@@ -114,7 +114,7 @@ gulp.task "webpack-dev-server", (callback) ->
 gulp.task 'default', ->
   gulp.start 'build'
 
-gulp.task 'build', ['webpack:build', 'css', 'copy-assets']
+gulp.task 'build', ['webpack:build', 'copy-assets']
 
 gulp.task 'watch', ['css', 'copy-assets', 'webpack-dev-server'], ->
   gulp.watch(['src/styles/**'], ['css'])
