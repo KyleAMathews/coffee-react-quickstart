@@ -81,7 +81,7 @@ gulp.task "webpack:build", ['css'], (callback) ->
 
 # Create a single instance of the compiler to allow caching.
 devCompiler = webpack(webpackConfig)
-gulp.task "webpack:build-dev", (callback) ->
+gulp.task "webpack:build-dev", ['css'], (callback) ->
 
   # Run webpack.
   devCompiler.run (err, stats) ->
@@ -93,7 +93,7 @@ gulp.task "webpack:build-dev", (callback) ->
   return
 
 devServer = {}
-gulp.task "webpack-dev-server", (callback) ->
+gulp.task "webpack-dev-server", ['css'], (callback) ->
   # Ensure there's a `./public/main.css` file that can be required.
   touch.sync('./public/main.css', time: new Date(0))
 

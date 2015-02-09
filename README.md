@@ -28,11 +28,6 @@ This will watch the src directories and build on changes and placed the built cs
 
 Then try editing `src/scripts/hello_world.cjsx` and see your changes magically show up in your browser with *no* page reload!
 
-### If styles don't show up
-Restart `gulp watch` and reload your browser.
-
-The problem is that I have Webpack setup to package CSS for the browser but we're using Sass/Compass before Webpack. On the first run, the `public/main.css` file is empty as Sass hasn't done its thing yet so Webpack requires an empty file and no styles show up in the browser. On the next start of `gulp watch` the `public/main.css` file *has* been compiled by Sass so styles will now show up in the browser.
-
 # Production build
 To build for production, simply run `gulp build`
 
