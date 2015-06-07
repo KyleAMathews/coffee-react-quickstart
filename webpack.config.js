@@ -18,6 +18,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new webpack.IgnorePlugin(/vertx/) // https://github.com/webpack/webpack/issues/353
   ],
   resolve: {
