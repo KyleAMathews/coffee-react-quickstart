@@ -21,5 +21,5 @@ routes = (
   </Route>
 )
 Router.run(routes, (Handler) ->
-  React.render <Handler/>, document.body
+  React.render <Handler/>, document.getElementById 'app'
 )
