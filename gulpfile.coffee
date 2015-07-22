@@ -101,7 +101,9 @@ gulp.task "webpack-dev-server", ['css'], (callback) ->
   devServer = new WebpackDevServer(webpack(webpackConfig),
     contentBase: './public/'
     hot: true
-    watchDelay: 100
+    watchOptions:
+        aggregateTimeout: 100
+        poll: 300
     noInfo: true
   )
   devServer.listen 8080, "0.0.0.0", (err) ->
