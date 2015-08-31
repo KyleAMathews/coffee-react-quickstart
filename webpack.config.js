@@ -17,9 +17,7 @@ module.exports = {
     modulesDirectories: ['node_modules']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new webpack.IgnorePlugin(/vertx/) // https://github.com/webpack/webpack/issues/353
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     extensions: ['', '.js', '.cjsx', '.coffee']
