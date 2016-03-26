@@ -4,7 +4,7 @@ RetinaImage = require 'react-retina-image'
 
 # Simple HTML element styleguide to demonstrate default css stylings.
 module.exports = React.createClass
-  displayName: 'HelloWorld'
+  displayName: 'StyleGuide'
 
   componentDidMount: ->
     window.scroll(0,0)
