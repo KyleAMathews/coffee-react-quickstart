@@ -3,6 +3,7 @@
 require '../../public/main.css'
 
 React = require 'react'
+ReactDOM = require 'react-dom'
 # Assign React to Window so the Chrome React Dev Tools will work.
 window.React = React
 
@@ -21,5 +22,5 @@ routes = (
   </Route>
 )
 Router.run(routes, (Handler) ->
-  React.render <Handler/>, document.getElementById 'app'
+  ReactDOM.render <Handler/>, document.getElementById 'app'
 )
